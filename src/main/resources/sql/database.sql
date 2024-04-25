@@ -100,3 +100,11 @@ CREATE TABLE order_details(
                               total_money FLOAT CHECK(total_money >= 0),
                               color VARCHAR(20) DEFAULT ''
 );
+
+CREATE TABLE product_images (
+    id int primary key AUTO_INCREMENT,
+    product_id int,
+    FOREIGN KEY (product_id) references products(id),
+    constraint fk_product_images_product_id foreign key (product_id) references products(id) on delete cascade,
+    image_url varchar(300)
+);
