@@ -7,11 +7,12 @@ import lombok.*;
 
 import java.util.Date;
 
-@Getter
-@Setter
+@Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 public class UserDTO {
     @JsonProperty("fullname")
     private String fullName;

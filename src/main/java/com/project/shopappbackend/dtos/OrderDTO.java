@@ -13,6 +13,7 @@ import lombok.*;
 @Getter
 @Setter
 public class OrderDTO {
+
     @JsonProperty("user_id")
     @Min(value = 1, message = "User's ID must be > 0")
     private Long userId;
@@ -43,4 +44,6 @@ public class OrderDTO {
 
     @JsonProperty("payment_method")
     private String paymentMethod;
+
+
 }
