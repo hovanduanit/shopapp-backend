@@ -1,5 +1,6 @@
-CREATE DATABASE shopapp;
-USE shopapp;
+DROP DATABASE IF EXISTS shopApp;
+CREATE DATABASE shopApp;
+USE shopApp;
 # Khách hàng khi muốn mua hàng => phải đăng ký tài khoản => bảng users
 CREATE TABLE users(
                       id INT PRIMARY KEY AUTO_INCREMENT,
