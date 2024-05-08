@@ -33,13 +33,12 @@ public class JwtTokenUtil {
         //this.generateSecretKey();
         claims.put("phoneNumber", user.getPhoneNumber());
         try {
-            String token = Jwts.builder()
+            return Jwts.builder()
                     .setClaims(claims) //how to extract claims from this ?
                     .setSubject(user.getPhoneNumber())
                     .setExpiration(new Date(System.currentTimeMillis() + expiration * 1000L))
                     .signWith(getSignInKey(), SignatureAlgorithm.HS256)
                     .compact();
-            return token;
         }catch (Exception e) {
             //you can "inject" Logger, instead System.out.println
             throw new InvalidParamException("Cannot create jwt token, error: "+e.getMessage());
